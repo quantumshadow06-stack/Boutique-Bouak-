@@ -1,37 +1,115 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ma Boutique Bouaké</title>
-<style>
-  body { font-family: Arial; margin:0; background:#f8f8f8; }
-  header { background:#25D366; color:white; padding:15px; text-align:center; }
-  .container { padding:15px; }
-  .produit { background:white; border-radius:10px; padding:15px; margin-bottom:15px; }
-  .produit img { width:100%; border-radius:8px; }
-  .prix { color:#e63946; font-weight:bold; font-size:18px; }
-  .btn { background:#25D366; color:white; padding:12px; border-radius:8px; text-align:center; text-decoration:none; display:block; margin-top:10px; font-weight:bold; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Boutique Bouaké</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; }
+        header { background: #25D366; color: white; padding: 15px; text-align: center; position: sticky; top: 0; }
+        .search-bar { padding: 10px; background: white; }
+        .search-bar input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        .categories { display: flex; gap: 10px; padding: 10px; overflow-x: auto; background: white; }
+        .cat-btn { padding: 8px 15px; border: 1px solid #25D366; border-radius: 20px; background: white; color: #25D366; white-space: nowrap; }
+        .cat-btn.active { background: #25D366; color: white; }
+        .products { padding: 10px; display: grid; gap: 15px; }
+        .product { background: white; border-radius: 10px; padding: 15px; }
+        .product img { width: 100%; height: 180px; object-fit: cover; border-radius: 5px; }
+        .product h3 { margin: 8px 0; }
+        .price { color: #e74c3c; font-size: 18px; font-weight: bold; }
+        .stock { color: #27ae60; font-size: 13px; margin: 3px 0; }
+        .delivery { background: #fff3cd; padding: 5px; border-radius: 5px; font-size: 13px; margin: 5px 0; }
+        .whatsapp-btn { background: #25D366; color: white; padding: 12px; border: none; width: 100%; border-radius: 5px; font-size: 15px; margin-top: 8px; font-weight: bold; }
+        footer { background: #222; color: white; padding: 20px; margin-top: 20px; text-align: center; }
+        .trust { margin: 8px 0; font-size: 14px; }
+        @media (min-width: 600px) { .products { grid-template-columns: repeat(2, 1fr); }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Ma Boutique Bouaké</h1>
+    </header>
 
-<header>
-  <h1>Ma Boutique Bouaké</h1>
-</header>
+    <!-- 3. RECHERCHE + CATEGORIES -->
+    <div class="search-bar">
+        <input type="text" placeholder="Recher : écouteurs, powerbank...">
+    </div>
+    <div class="categories">
+        <button class="cat-btn active">Tous</button>
+        <button class="cat-btn">Électroniques</button>
+        <button class="cat-btn">Vêtements Homme</button>
+        <button class="cat-btn">Vêtements Femme</button>
+    </div>
 
-<div class="container">
+    <!-- 5 PRODUITS -->
+    <div class="products">
+        
+        <div class="product">
+            <img src="ecouteurs.jpg" alt="Ecouteurs">
+            <h3>Ecouteurs Bluetooth</h3>
+            <div class="price">15000 FCFA</div>
+            <div class="stock">En stock : 5 pièces</div>
+            <div class="delivery">Livraison à Bouaké : 1000 FCFA</div>
+            <a href="https://wa.me/2250161741456text=Bonjour,%20je%20veux%20Ecouteurs%20Bluetooth%20à%2015000%20FCFA.%20Livraison%20à%20Bouaké.">
+                <button class="whatsapp-btn">📱 Commander sur WhatsApp</button>
+            </a>
+        </div>
 
-  <div class="produit">
-    <img src="https://via.placeholder.com/300x300.png?text=Ecouteurs" alt="Ecouteurs">
-    <h3>Ecouteurs Bluetooth</h3>
-    <p class="prix">15000 FCFA</p>
-    <a class="btn" href="https://wa.me/2250545483998text=Bonjour%20je%20veux%20Ecouteurs%20Bluetooth" target="_blank">
-      📱 Commander sur WhatsApp
-    </a>
-  </div>
+        <div class="product">
+            <img src="powerbank.jpg" alt="Power Bank">
+            <h3>Power Bank 20000mAh</h3>
+            <div class="price">12000 FCFA</div>
+            <div class="stock">En stock : 8 pièces</div>
+            <div class="delivery">Livraison à Bouaké : 1000 FCFA</div>
+            <a href="https://wa.me/2250161741456text=Bonjour,%20je%20veux%20Power%20Bank%2020000mAh%20à%2012000%20FCFA.%20Livraison%20à%20Bouaké.">
+                <button class="whatsapp-btn">📱 Commander sur WhatsApp</button>
+            </a>
+        </div>
 
-</div>
+        <div class="product">
+            <img src="chargeur.jpg" alt="Chargeur">
+            <h3>Chargeur Rapide 20W</h3>
+            <div class="price">8000 FCFA</div>
+            <div class="stock">En stock : 12 pièces</div>
+            <div class="delivery">Livraison à Bouaké : 1000 FCFA</div>
+            <a href="https://wa.me/2250161741456text=Bonjour,%20je%20veux%20Chargeur%20Rapide%2020W%20à%208000%20FCFA.%20Livraison%20à%20Bouaké.">
+                <button class="whatsapp-btn">📱 Commander sur WhatsApp</button>
+            </a>
+        </div>
+
+        <div class="product">
+            <img src="chemise.jpg" alt="Chemise">
+            <h3>Chemise Homme</h3>
+            <div class="price">10000 FCFA</div>
+            <div class="stock">En stock : 6 pièces</div>
+            <div class="delivery">Livraison à Bouaké : 1000 FCFA</div>
+            <a href="https://wa.me/2250161741456text=Bonjour,%20je%20veux%20Chemise%20Homme%20à%2010000%20FCFA.%20Livraison%20à%20Bouaké.">
+                <button class="whatsapp-btn">📱 Commander sur WhatsApp</button>
+            </a>
+        </div>
+
+        <div class="product">
+            <img src="robe.jpg" alt="Robe">
+            <h3>Robe Femme Élégante</h3>
+            <div class="price">18000 FCFA</div>
+            <div class="stock">En stock : 4 pièces</div>
+            <div class="delivery">Livraison à Bouaké : 1000 FCFA</div>
+            <a href="https://wa.me/2250161741456text=Bonjour,%20je%20veux%20Robe%20Femme%20à%2018000%20FCFA.%20Livraison%20à%20Bouaké.">
+                <button class="whatsapp-btn">📱 Commander sur WhatsApp</button>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- 5. PREUVE DE CONFIANCE -->
+    <footer>
+        <h3>Pourquoi nous faire confiance ?</h3>
+        <div class="trust">⭐ Avis clients : 4.8/5 - +200 clients satisfaits</div>
+        <div class="trust">💰 Paiement : Orange Money / Wave</div>
+        <div class="trust">🔄 Retour possible 24h si problème</div>
+        <p style="margin-top:15px;">Contact : 07 XX XX XX XX</p>
+    </footer>
 
 </body>
 </html>
